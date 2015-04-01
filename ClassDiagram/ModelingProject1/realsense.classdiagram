@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="ed9ba93c-9768-41c9-9a6f-fc7ea07f8d1f" name="realsense" linkedPackageId="668b1777-5ca7-4b75-aca4-ba74d118f628" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b218590b-7f61-4f8f-92c8-660a2eb7e82b">
+      <profileInstance Id="c9683d59-df84-4820-a685-7ba80c8c119c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2e2527fe-2581-4b0a-8938-62db8dd3b455">
+      <profileInstance Id="abe1eb45-ecfe-4456-81b3-f13cbfe23bbf" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a312bab1-0a22-4a72-ac5d-9479d04ddccd" name="SimpleTrhead" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="437a3bd1-995c-4fbb-890f-f595d3785853" />
+        <ownedOperationsInternal>
+          <operation Id="df21a3bf-57d3-4b54-98c2-458177d32694" name="start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a13749c-d5aa-40b9-86c7-1ddbbffacd3f" />
+          </operation>
+          <operation Id="e1c8cd33-4b32-4af3-85eb-488d1c7628ea" name="stop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="826c6bc1-c72c-40e2-be50-ed1ee9e0f78c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="aeff7eaa-626b-4314-a60b-63d34f493287" name="GesturePipeline" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="79e07d05-ce5b-40e8-b7ce-63a5e7fa14b7" />
+        <generalsInternal>
+          <generalization Id="b7f3dcf4-df4d-4a6f-857e-1678e8b37a38" isSubstitutable="false">
+            <classMoniker Id="a312bab1-0a22-4a72-ac5d-9479d04ddccd" LastKnownName="SimpleTrhead" />
+            <elementDefinition Id="f31a9e7c-38bc-4025-85c2-1f45752ee42a" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="1ad07e9e-301b-4d03-9f71-6863f62e38b8" isDerived="false" sourceEndRoleName="GesturePipeline" targetEndRoleName="BaseRule" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ab2d6dcd-34d3-4a0f-85bf-08d7950c70e9" name="GesturePipeline" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dd768b14-03b2-4c83-ae0e-bcee7e4a54d5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="048bf703-18be-497c-aa63-8678f903b58c" name="BaseRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d352f625-bd6d-4958-9016-4986ee9a61de" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a8320d79-f847-4644-9958-189fda609e2b" />
+          </association>
+          <association Id="57c9da67-e81f-4fec-a65c-6ca1fc071c55" isDerived="false" sourceEndRoleName="GesturePipeline" targetEndRoleName="RealSense SDK" isLeaf="false" isAbstract="false">
+            <classMoniker Id="067f8eeb-b4a9-4979-b9e6-57fb715ac955" LastKnownName="RealSense SDK" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7599c3ec-889f-417f-a198-5a4d5297fa4c" name="GesturePipeline" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6409cabc-19a1-4b7e-9e8b-3ce70c0da40e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b3ecfca-2ad9-4f3f-9651-584a879b43a6" name="RealSense SDK" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a40a1ec-0cde-4c5b-b282-93ed49b83fd8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8ae39180-75eb-419c-b56d-ca9329a74cde" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="fff73849-96e7-4675-b165-a67ede1c3b16" name="_pxcHandData" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="035b905c-ea05-49e2-b547-92605dd15ee7" />
+          </property>
+          <property Id="929e4770-c91d-453d-b69e-995d4151d379" name="_pxcHandModule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ddd9304b-821f-4410-ad56-bc9666dc05b1" />
+          </property>
+          <property Id="e1af9798-9e8b-4a78-b19e-54a67577ee4f" name="_pxcSenseManager" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14e7189a-0748-46a9-b753-584869918e37" />
+          </property>
+          <property Id="69a62276-833d-449f-9e4c-58d209c1d3ab" name="_handDetectedRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6ca83d3d-eec0-4d78-a735-98995a91413d" />
+          </property>
+          <property Id="786ddf44-febf-4bfb-a653-1a4e7808a607" name="_handLostRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="eaa3a956-a004-4db4-9e31-415219210c4b" />
+          </property>
+          <property Id="91ad1d72-be7d-4b11-97cb-0d7bfd08a574" name="_gestureDetectedRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5f99b16-fab2-41e9-ae5d-19479c956dcd" />
+          </property>
+          <property Id="a9ac148c-0f38-4d4c-b0ed-c33da7d3bf76" name="_drawImageRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="299d334e-b25f-49fb-8252-bf654ef8d6c8" />
+          </property>
+          <property Id="39bf6d20-a993-4e9b-80f4-0112cca3c6dc" name="_handMoveRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3d9f81d8-2ee4-415d-8cbd-8f4a966bfe3e" />
+          </property>
+          <property Id="be74674c-98b1-434e-ac2b-55d35d114874" name="_rotateRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="81c6a66a-53db-4be3-a891-85620fbcb975" />
+          </property>
+          <property Id="206b9b31-6955-4285-8432-e2792253a824" name="_scaleRule" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2e77e3fd-75de-4b0e-9f16-b96b338c3bfe" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ae9d436e-017f-462d-9317-024499ebe04a" name="enableHandDetectedRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="209e6b2c-1193-4623-9fd0-0f1fa792077f" />
+          </operation>
+          <operation Id="f95169f2-f563-4927-8da7-99cc0d1115f4" name="enableHandLostRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4520d260-b94e-486e-8297-cc508c7a647f" />
+          </operation>
+          <operation Id="f2b244e7-0eca-4309-b714-f3e1dfc9abf5" name="enableHandOpennedRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="894f67cb-e9df-4f72-a6e7-b3dcc50e5702" />
+          </operation>
+          <operation Id="fb42c199-5311-4f89-903c-06e82300917f" name="enableHandCloseRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fd6fc295-cb13-4b98-bc9f-21471047c1a8" />
+          </operation>
+          <operation Id="0a23aca6-6932-4081-9c44-9842526b33a6" name="enableHandMoveRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="afbf64fa-134c-4570-b30d-b7af9c34c1aa" />
+          </operation>
+          <operation Id="30baf503-a681-46c4-b262-6b7544551ddf" name="enableGestureDetectedRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e80b7f3b-48b3-4650-ba50-75479a21b22f" />
+          </operation>
+          <operation Id="a7517c36-ef02-44dd-8b6f-f71484a24f19" name="enableDrawImageRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d9635946-35fb-48d2-8f5f-de5940d4f996" />
+          </operation>
+          <operation Id="3ab71d2e-97c6-40a8-a6b4-344434c861fb" name="setImageOpacity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="062ca694-afa0-4b18-888f-3f56a3e1201d" />
+          </operation>
+          <operation Id="4d859fec-146b-4b2f-b45e-cfca1ec9c5f0" name="enableRotateRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a0a8525-42a0-460b-9645-c151e3e39d37" />
+          </operation>
+          <operation Id="3cf8b007-badd-4d3d-b5ab-0587fafe4397" name="setRotateFreeze" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="996cbffb-5af9-403a-8aa5-6e83af17ba70" />
+          </operation>
+          <operation Id="a29c42d5-605e-4394-9cab-269d40800ebe" name="enableScaleRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f1d3cbe-e98d-49bd-b192-dbab0add752a" />
+          </operation>
+          <operation Id="4c7058ef-189b-46ff-8e45-985a3e2822e6" name="enableTwoHandsDetectedRules" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f8abc033-aad7-4ea3-8712-3ebe5f45e673" />
+          </operation>
+          <operation Id="a4026bbe-1ecb-4b1d-99de-b1cb13de569d" name="enableTwoHandsLostRules" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3fdc940a-28b8-41a7-9989-a1a7b2b68185" />
+          </operation>
+          <operation Id="393f889f-27d1-40a5-ba66-0fe14628d232" name="enableAllRules" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6571b6bc-125b-4d2c-9d91-f18f38918ab6" />
+          </operation>
+          <operation Id="0e262f46-402a-4535-8ab2-1ba1ed045e01" name="handleFrame" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4735f5c1-4507-4d31-97d1-c0a7fd290d31" />
+          </operation>
+          <operation Id="e2933145-cba8-47de-b2ae-609eedf6d07c" name="init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="90c7f427-b089-4e1b-b7a0-13009f52ddfb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="41fff49d-9e1e-4c75-8a46-7c1c8ab6e1a9" name="RSCamera" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d171abc9-ba83-42f1-a515-c22985b33230" />
+        <generalsInternal>
+          <generalization Id="20c698a9-b63c-4589-8358-de3c1adfc8f6" isSubstitutable="false">
+            <classMoniker Id="aeff7eaa-626b-4314-a60b-63d34f493287" LastKnownName="GesturePipeline" />
+            <elementDefinition Id="51b52dc2-1a42-4a88-aee3-9544e45d9b04" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e4211290-789e-41f8-950c-3b33abdf59b6" name="EventGesture" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c3a149a0-2120-4a3b-9a20-e9b85b7a1cd1" />
+        <targetEnds>
+          <association Id="16618402-1e71-4003-b2e0-f8d51745a16b" isDerived="false" sourceEndRoleName="EventGesture" targetEndRoleName="HandData" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0ff451fc-44c9-41b0-a51f-87e278c106d7" LastKnownName="HandData" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="11c6db2d-bd04-427e-9e9f-84353d52f5cc" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="218dd455-eb77-4914-8585-476884adf87f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b139d732-2182-403a-bbe9-5967aeba848b" name="HandData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6e81f51e-a666-44f2-a995-656fd2a14053" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f49f3cf6-e401-49b3-b4dd-3c1c77d5d3d8" />
+          </association>
+          <association Id="9468fe34-fd5e-4e43-805e-dcc80a563224" isDerived="false" sourceEndRoleName="EventGesture" targetEndRoleName="GestureType" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="fc82ac55-8657-41a4-aebb-80b4aed98e1f" LastKnownName="GestureType" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c074c04f-cf44-42c5-ab23-c5f5a53c0e0f" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d00d188e-3b71-4e3f-815c-e6c0fa090113" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c328685-d9cf-4ef9-b78f-4950cca8b2f2" name="GestureType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="15a16313-af24-45ce-bced-7518e46accc7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="be5e860e-ca38-4027-9079-9a1d4bbb45f3" />
+          </association>
+          <association Id="a465590d-7f74-48ff-ad15-82bf0474565a" isDerived="false" sourceEndRoleName="EventGesture" targetEndRoleName="JointType" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="ab5695db-bcf7-4888-95e5-a2add42f0882" LastKnownName="JointType" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9016a6eb-6576-413e-8eae-caaa0b2ba320" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="158ed0bb-e9be-4166-b2cf-2201732252ff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dcdd2e31-2442-47ee-917e-7cb569d202be" name="JointType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="46ba60a7-5ac1-4246-a6f9-bc505df372f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e5b3c685-1ca5-4e6f-b450-b046f8074101" />
+          </association>
+          <association Id="90d23965-a7a8-4d97-aeed-8cfc2b69e19d" isDerived="false" sourceEndRoleName="EventGesture" targetEndRoleName="BodySideType" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="434a2d53-51a4-422a-ba4d-8bdc6423d51a" LastKnownName="BodySideType" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ded13d8e-6f08-4be9-923d-97af9be1f396" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6942b653-a9af-4c78-b9e1-ab8a9da6028d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e03c3f2f-2404-49e4-95a8-4dc0b15dc790" name="BodySideType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1889368b-a705-496c-98d8-63b503e9171b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="11e2cca9-5786-4140-b51c-b217a1f8dd0d" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="64f05b3c-c18a-4023-8baa-a7757ccaecd3" name="_gestureType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cd253ce7-e0bf-419e-bed6-5d49ea3abdfb" />
+          </property>
+          <property Id="43b70b2a-4fec-4829-bf50-1730c4298e36" name="_bodySideType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="12799a63-98a6-47b0-968e-d747d762aba3" />
+          </property>
+          <property Id="243229ac-a14d-4932-89db-fbc81127cdf5" name="_handData" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bd3bfaa3-45df-4b9e-8335-03f35a711cb3" />
+          </property>
+          <property Id="8a78e6ea-23b2-4f9b-83f1-b8be2c33a51b" name="_depthImage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="348d63d5-c5c3-4f59-a6f2-2fed0d2683a8" />
+          </property>
+          <property Id="a790e7fe-c711-4786-ae8d-ab289642cd3c" name="_rotationData" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dfc45290-1cff-4d7c-a3c8-159bfc293acf" />
+          </property>
+          <property Id="d91ad6b1-8bfe-4540-9313-2930cdc19ecd" name="_scaleData" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3b08ed6a-60e9-4c8c-9723-5264d180f2d2" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0203bd3a-30f8-40f8-b34b-deda2cfa7d54" name="getGestureType" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="be31fc26-a51d-485d-816c-093b4aa23916" />
+          </operation>
+          <operation Id="0b134511-3ce8-4c48-9ead-da1024260a5a" name="getBodySideType" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="01e53351-803f-41ff-9aab-eba6021cee27" />
+          </operation>
+          <operation Id="ba1db207-3d3c-4fd7-b1a7-aad539da57ac" name="getHandData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c17f782-6ee6-456b-9010-baad3d3884e2" />
+          </operation>
+          <operation Id="535a0127-442f-41f7-94b4-7b80d06a3702" name="getDepthImage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e6ffd60-2b69-4208-958a-62d5aeaa676f" />
+          </operation>
+          <operation Id="2dbe259d-af50-4869-936e-1fb55d3664e4" name="getRotationData)" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="554647ad-f636-4773-b833-af8780bfbb57" />
+          </operation>
+          <operation Id="f4d66db9-ebca-4c24-857e-c5b612fb2b58" name="getScaleData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b1bc1316-0c49-43d0-b7df-2caa5a165d73" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ccf47913-4d47-43fb-8fe7-30340f9d7577" name="EventListenerGesture" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="24e29d0d-9074-49d5-891e-2db426b451a8" />
+        <targetEnds>
+          <association Id="539742f0-a980-4901-baa1-76ce544b27c0" isDerived="false" sourceEndRoleName="EventListenerGesture" targetEndRoleName="EventGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e4211290-789e-41f8-950c-3b33abdf59b6" LastKnownName="EventGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9d63ff6a-ca7f-49c2-9b9d-d18aa2c7e4a9" name="EventListenerGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="89026dc5-4890-49f9-9809-e0e4bcfa8f84" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f780d73-90bb-4690-9a64-3428141fa24d" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dc9e4f7f-7fbe-460d-92e3-f1bd65b7a960" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7bba26c3-34ff-4d03-a6b2-9cbec11eeedd" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="bd2c70ab-f230-42dc-b98f-6bd88d679074" name="onGestureThumbUp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5b07123b-5e64-43e7-b9cd-7366844adcfe" />
+          </property>
+          <property Id="d849a174-6c54-4672-94e1-00b85ca2dd6c" name="onGestureThumbDown" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b980d2a3-d16e-4fdc-8256-f1e8b39e1e6a" />
+          </property>
+          <property Id="df8e3621-08b9-405e-bed9-092798718baa" name="onGestureFist" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="52269d0d-8386-45c9-a933-6c6e1a68321b" />
+          </property>
+          <property Id="48eb9c51-e318-4ac9-b2df-9faccde9c274" name="onGestureSpreadFingers" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c46efecc-6191-4e4d-ad68-72cac1ca72c7" />
+          </property>
+          <property Id="d26a15f7-eda0-4919-833a-8dbaedaa334e" name="onHandMove" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="06736442-ab7a-4b70-88f5-c99175a9aa7c" />
+          </property>
+          <property Id="82c65bce-e66f-4d03-926e-645275b4bd31" name="onHandDetected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="754ae08b-947c-4f76-b4f1-65dc4c812e61" />
+          </property>
+          <property Id="f85a1f0a-bd5c-4b41-bb55-b3b359105453" name="onGestureRotation" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6f8fd62d-af2a-4795-86fd-becd960099e1" />
+          </property>
+          <property Id="23c65b7c-64a3-43ac-a76a-2547afa8fbb9" name="onGestureScale" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5bfb5247-bef5-475c-8bd2-0b6186c34348" />
+          </property>
+          <property Id="34f89db6-93f3-42ac-bd5d-8c8b1e7bb506" name="onGHandLost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5888432-2a6c-414a-bc79-f9ecf505d7b0" />
+          </property>
+          <property Id="fc7108e1-8222-4459-b98a-3d77bcd98be8" name="onDepthImage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e81886e-0f39-471a-bb89-71dad8f543c6" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6b14dde5-b968-4a6c-bca0-010cb0577289" name="OnEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5f5d8f17-7010-4e3e-8a6e-675c7e5ab202" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0ff451fc-44c9-41b0-a51f-87e278c106d7" name="HandData" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8ed7db29-bd0e-4dbf-97e6-f809ead9f14b" />
+        <ownedOperationsInternal>
+          <operation Id="129bb953-a332-4032-8ed7-7540d60d145f" name="getX" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0683367-a782-4032-a3a3-a8dce428be2e" />
+          </operation>
+          <operation Id="043c2f62-52ee-4e83-ba66-8d3095f1e7ac" name="getY" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f8b73687-5c47-4bca-ab5d-90ec5fd5cd6b" />
+          </operation>
+          <operation Id="3e8bc47b-d518-4bb0-a959-6b8c5e3d72f4" name="getZ" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="76596f1e-eb52-458b-ab57-150967a66965" />
+          </operation>
+          <operation Id="a3b0c264-017c-4ff2-9dfd-35871d50f7b7" name="getJointData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="92a8fd92-3bbc-4e79-b80c-e317ace65b67" />
+          </operation>
+          <operation Id="d77f7570-90ad-40e9-8a89-a282053f68f8" name="getOpenness" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="09dfcbb4-6ef4-463e-a15c-8be5773d5afb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="fc82ac55-8657-41a4-aebb-80b4aed98e1f" name="GestureType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="22d51f64-c92a-40b8-9d28-f32fa4e5735f" />
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="ab5695db-bcf7-4888-95e5-a2add42f0882" name="JointType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="088df970-fbb7-4cb5-b896-48b313d0734d" />
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="434a2d53-51a4-422a-ba4d-8bdc6423d51a" name="BodySideType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9890c60b-132d-4f14-9234-9531ba34e5f8" />
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" name="BaseRule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="109ec614-f0c8-496c-ac53-73891952828d" />
+        <targetEnds>
+          <association Id="fdd9aef3-49e7-40cc-ae69-bbbec47aa296" isDerived="false" sourceEndRoleName="BaseRule" targetEndRoleName="RealSense SDK" isLeaf="false" isAbstract="false">
+            <classMoniker Id="067f8eeb-b4a9-4979-b9e6-57fb715ac955" LastKnownName="RealSense SDK" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0079b3d-fc2a-44ee-9027-64051c6c2fba" name="BaseRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f30e4f67-e6e5-4412-9daf-80cf1da0fb1d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4369befd-61bb-43ec-8696-e209b5b7927f" name="RealSense SDK" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b039cda6-68f8-44a7-8a94-fdd1e74bb78a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c27da083-b512-4344-8396-92ea18454f0e" />
+          </association>
+          <association Id="96546997-51cd-4444-9ac2-7876e228b29c" isDerived="false" sourceEndRoleName="BaseRule" targetEndRoleName="EventGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e4211290-789e-41f8-950c-3b33abdf59b6" LastKnownName="EventGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="85805e11-b045-4b67-8349-50a48b983bb0" name="BaseRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="10feee22-e58a-41b5-8968-8781207eb112" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1ed67007-6fd2-45b0-9d41-9a70ca6d8687" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d3eb2840-3c12-40a3-a9bf-8fd99b769068" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="946dc2c8-5633-4326-9fde-f8550d367df5" />
+          </association>
+          <association Id="73374093-28d6-4bef-ae5c-fe666007b363" isDerived="false" sourceEndRoleName="BaseRule" targetEndRoleName="RealSenseEventCenter" isLeaf="false" isAbstract="false">
+            <classMoniker Id="077c7b99-458b-4c6d-8d93-2037171150fc" LastKnownName="RealSenseEventCenter" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d468ceaa-52a9-492b-a871-8a5f33e6e3c0" name="BaseRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d01b3858-fef4-4d7e-8d3b-edd2ddd2563f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b666ce89-6de7-4d3f-88f1-1a022e56004d" name="RealSenseEventCenter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5261d99f-3baa-4558-9991-724b7932d84d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="56229e95-0be4-48e4-9b1b-3db06506ef5b" />
+          </association>
+        </targetEnds>
+        <ownedAttributes>
+          <property Id="81686fbd-950b-4832-bf69-f382d0c628f4" name="_whichHand" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14db141c-d0b4-450a-bbc4-a7fe82d03335" />
+          </property>
+          <property Id="fce9cb93-42a0-451f-913f-a68877e81780" name="enabled" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1653a15d-4ba7-49c8-8f7c-e66a68d72fd8" />
+          </property>
+          <property Id="b98275c0-4e92-4046-9d63-ec46bfddb519" name="_continuousTracking" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="093baea8-8458-40d0-ae79-1caba979d95f" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="6eb2b0ce-feca-4361-ad78-643c0498ab1b" name="process" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="64968e49-505a-4d97-9997-acf63da0b6ec" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b90e0e44-a8d5-4f6c-aa44-8395528b2d9f" name="HandDetectRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="52ce3719-7631-4638-8354-f016c3eae91a" />
+        <suppliersInternal>
+          <interfaceRealization Id="37cc16c3-2d81-418d-80cc-b86f796d8d65">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <elementDefinition Id="dd9ccca4-7736-4aef-b647-5a12a5806761" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="6cd2728c-d493-4f99-86aa-bc489dc2b7dc" name="process" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="03a74c53-22cb-4980-a902-9a214a28c9e1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="361db9ff-b8c6-4be2-af09-8d957a8879bf" name="GestureDetectedRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3e5e43ce-b3e6-4460-bdc4-a0e909bebeb1" />
+        <suppliersInternal>
+          <interfaceRealization Id="f962ca1d-394a-49f9-9ac1-27aed8def5ae">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <elementDefinition Id="20c6111f-b6d9-4b0d-b4dd-6f012c3a5782" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="fb2ac587-a437-4d3b-bbb3-a5f1677bb584" name="process" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf83549b-5295-4081-9c1c-66ab084b692b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="642e400b-dc6f-484f-a699-af725f93862e" name="DrawImageRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="587da4f6-4e0d-41cf-aa3a-cf0d0230e72a" />
+        <suppliersInternal>
+          <interfaceRealization Id="f6b12881-e46b-4b10-b10a-8ae42766447a">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <elementDefinition Id="d8bdcd93-0430-4a58-863c-7dc28da64361" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="3272033b-9602-4c0d-8b31-3293a436381a" name="process" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c6e1de90-c94e-40cc-936c-ab8f5a42394c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d322a3ba-2efb-438d-aa49-8e48648e0505" name="HandRotateRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c6db4bab-eacc-4869-be25-b580253c2354" />
+        <suppliersInternal>
+          <interfaceRealization Id="976b6fcc-b7b7-434e-972b-35d89205cf61">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <elementDefinition Id="a87a5840-4789-43ef-91da-93a05f8e9269" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="f9d5fc3b-ad9d-430b-aa34-ea54e13f7dca" isDerived="false" sourceEndRoleName="HandRotateRule" targetEndRoleName="RotationAction" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6268301f-5731-427d-8828-74f10a8eb995" LastKnownName="RotationAction" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c2c15dd2-8b49-4927-95e5-22747a84f45d" name="HandRotateRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="00d98884-fa49-4b7b-925a-ebe040cd9ca7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea7ba69f-1e9d-45f3-948b-1d2bfc0a27ec" name="RotationAction" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="2f152162-d0fe-4341-b5fc-b0f08e49d553" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4d583027-687b-487f-a85c-20d82a3b85b2" />
+          </association>
+          <association Id="9845e2f7-417f-41ff-ae88-2538b92efe90" isDerived="false" sourceEndRoleName="HandRotateRule" targetEndRoleName="RoationData" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8fe2dcca-de61-48d3-8473-fc9ebd6c0927" LastKnownName="RoationData" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fa980135-0d92-4ef7-b367-5fe29134c012" name="HandRotateRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a196d75e-b600-4f07-bf02-de8f8f0492a0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9230127d-b31e-4dc3-9d60-b7b2cd396fa3" name="RoationData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f9ba4fcb-ee3a-4a39-b7aa-f2e55833a04f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="258bbea3-acc8-4dd5-81e8-8b1340674036" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="1631281b-89a2-4ea5-871e-1d5ab57e9a07" name="process" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0dbd9bfa-7cef-4846-9ed6-1e2d5366fed2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b410bc7f-ffb5-4388-8b63-b01edca3077d" name="HandScaleRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cbff9422-9393-4a01-8d1e-6246c8b59105" />
+        <suppliersInternal>
+          <interfaceRealization Id="48d64912-0ec4-43bf-ab95-13b43c7a8004">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <elementDefinition Id="7fa7b147-3b8d-4a9d-b654-c3c81b565376" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="e6d01e41-8b6d-4624-b1a4-c0319cf3946b" name="process" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6c867772-6cbf-4e8c-8863-e23f2a07e0a5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6268301f-5731-427d-8828-74f10a8eb995" name="RotationAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2de708ac-4539-4fcb-b080-b74f2fc1385e" />
+        <targetEnds>
+          <association Id="0571c1be-9c65-4f0e-9260-ed857ee93a73" isDerived="false" sourceEndRoleName="RotationAction" targetEndRoleName="RoationData" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8fe2dcca-de61-48d3-8473-fc9ebd6c0927" LastKnownName="RoationData" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43e39eda-3545-4156-a13a-1ab8e99ec838" name="RotationAction" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6732fb13-cbc2-4cd9-af1a-795e6c7cbe68" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1e213fc5-4b5d-48e5-af62-8e1d34ffbb44" name="RoationData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b31b35fb-9878-47f0-9559-56f7ca4a57af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1ab191ec-57a6-4952-8d2a-297832cda260" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="a8bd04d5-bb29-495e-a56b-e9c11ef68c93" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0a36516e-a401-4f1b-8e54-4c08997b7e63" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="077c7b99-458b-4c6d-8d93-2037171150fc" name="RealSenseEventCenter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="369b14b5-4328-4fd4-bb1a-afe243d8f271" />
+        <targetEnds>
+          <association Id="910819b3-1083-435b-9e08-9df7dfe1e9d9" isDerived="false" sourceEndRoleName="RealSenseEventCenter" targetEndRoleName="EventGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e4211290-789e-41f8-950c-3b33abdf59b6" LastKnownName="EventGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c3cca4d1-7814-45a5-b575-5a2e106f9295" name="RealSenseEventCenter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9d9a1bf6-e855-43d5-81ce-e3c5c5602072" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5dc123c8-9ce8-4ce9-b6c7-ed05cb2704f5" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8348f6cb-efad-4db9-b4bc-8ccb46eeb325" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c474e7bb-32c6-4cef-a5b9-1778877385a1" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6ad19a05-3c48-406d-8dfb-238767bfd45c" name="gestrueEventQueue" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a3ca7db9-fcfc-4ce7-95ed-7ff5d5d00675" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b5ee8607-fd14-4472-b997-c28adda114e5" name="pushGestureEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6552c7e7-f9d1-4c88-a48e-64ad4c4fe219" />
+          </operation>
+          <operation Id="1647a637-de34-410e-ad84-7a0496d49efc" name="tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b4ce5a7f-c9f1-465a-be3e-013358291c88" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8fe2dcca-de61-48d3-8473-fc9ebd6c0927" name="RoationData" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bfaabeba-4654-4f66-aa14-fcd12c378870" />
+        <ownedAttributesInternal>
+          <property Id="4bcdd71a-5e41-4069-9079-85e29af3e6b3" name="Pinch" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f8b1a6fd-1df2-4f5a-b039-f70a179289f8" />
+          </property>
+          <property Id="d3ca01da-7311-430f-a43a-6559632ee43b" name="Yaw" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="70302b51-e76a-401b-9ece-5875589ea8be" />
+          </property>
+          <property Id="a9194427-3dae-4c37-89f4-49510e559bb8" name="Roll" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6d637d3a-1847-4f0a-b22a-57aa25d00dc4" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f51980f6-97c7-4018-bceb-e08182921b81" name="HandTrackingLayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e58e4b38-d5a8-4594-bd63-41af8099d1fb" />
+        <targetEnds>
+          <association Id="d51e14a9-3119-4326-b8ad-4ca3b2ea7014" isDerived="false" sourceEndRoleName="HandTrackingLayer" targetEndRoleName="EventGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e4211290-789e-41f8-950c-3b33abdf59b6" LastKnownName="EventGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="41182073-9ffa-49b3-bece-00fa49172f73" name="HandTrackingLayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="aaef5352-bd39-4393-9eb3-dbb6102b1432" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7c79980a-4aad-491e-9a68-7a3a6781d5b2" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6831f7b6-0dae-47a2-8ada-4355da72b41f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0b9f4f19-aa9b-4908-a852-5ce2c800ec5a" />
+          </association>
+          <association Id="6877df09-63d3-4497-a4b6-bb971f825cb0" isDerived="false" sourceEndRoleName="HandTrackingLayer" targetEndRoleName="EventListenerGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ccf47913-4d47-43fb-8fe7-30340f9d7577" LastKnownName="EventListenerGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6cefc16e-af63-4c84-a67e-ace6a65e2ba4" name="HandTrackingLayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0e4cec4a-be43-46f6-8787-0737f648ac13" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f85dc1a-cd72-4384-81e4-63dc5af7a54f" name="EventListenerGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a110202f-e53a-4563-a3e6-ff5085842779" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b2b6de2f-61a0-4a1a-8e3a-f2496625cbd3" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="91192d64-e4bd-451b-a394-d94bf672fe37" name="_trackingLayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bdd87ce1-b5e2-4133-9794-584086e1cd5e" />
+          </property>
+          <property Id="ca50d9c9-30cc-4509-9545-21a65fa79683" name="_cursor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="eff06a97-3f78-4cd8-ac5d-6a8b7eadda09" />
+          </property>
+          <property Id="3c241e39-083e-48e1-8393-627129542833" name="_progressBar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c5195437-0c0c-44ef-b145-88b0e0e40295" />
+          </property>
+          <property Id="7d10ba01-5e96-4ae3-839b-f7718fb6a750" name="_depthImage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="596a7234-eb73-4e29-a0ea-17fe1b4cdaa6" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4b5c8f25-00c7-4f07-ac35-8945fea988a6" name="setDepthImagePosition" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d6727fbf-4462-4154-abab-ad09ef888b8b" />
+          </operation>
+          <operation Id="07c11860-409e-4bde-b1a2-6f41ebf269d1" name="onHandMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="52f197ea-75af-46f2-a99e-7e71a324a005" />
+          </operation>
+          <operation Id="f01c9dad-d62e-47b5-afed-c364fceb0fc2" name="onDepthImage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="81c8b9af-e6d0-4021-b768-eadc1b783124" />
+          </operation>
+          <operation Id="2c4e7dbb-3271-4c94-94f9-6e251c172884" name="onOpennessChange" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4829aa1a-13ab-45b0-864f-a9f1195953b2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0a4be0b6-8135-48fd-b3cd-a4ef6284fc7c" name="AppDelegate" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a2a29ff8-381d-452a-bec4-f206f8a12d71" />
+        <targetEnds>
+          <association Id="e7a1b16b-b5a1-4d99-a280-d6b967516191" isDerived="false" sourceEndRoleName="AppDelegate" targetEndRoleName="RSCamera" isLeaf="false" isAbstract="false">
+            <classMoniker Id="41fff49d-9e1e-4c75-8a46-7c1c8ab6e1a9" LastKnownName="RSCamera" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d99f10cc-b094-4b1b-8cee-53ba56ad5def" name="AppDelegate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a185c5f6-8d9d-425a-b89f-0e7301e0839a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9f291a85-7f2b-409f-ba90-11277db3e3ec" name="RSCamera" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d3bc1abf-a167-40ba-99b4-104e9ea896d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0b617857-e0a6-46e8-9b8d-c643b8d20686" />
+          </association>
+          <association Id="d7d11cac-ca4d-426f-9a7c-337702c0d6ac" isDerived="false" sourceEndRoleName="AppDelegate" targetEndRoleName="HandTrackingLayer" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f51980f6-97c7-4018-bceb-e08182921b81" LastKnownName="HandTrackingLayer" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9f9e0380-b5e5-4457-b011-8db7b62753ae" name="AppDelegate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a971dbb0-6b38-4561-a515-8b608b11a36c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b380161f-5abf-4945-9371-6ca416ebc08e" name="HandTrackingLayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2b9bdcbc-2d10-46b7-8906-b0ad1b808bb8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cdff8ae5-6b80-428e-b767-3cb0075acb52" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2fc7dcf3-be0d-4c44-8b7f-d4a2b1284d71" name="demoLayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="edb290b6-fadf-45be-bec8-6d14b19c856d" />
+        <targetEnds>
+          <association Id="f95c5a1e-8e00-4cac-a498-5f6c00d86cd7" isDerived="false" sourceEndRoleName="demoLayer" targetEndRoleName="EventGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e4211290-789e-41f8-950c-3b33abdf59b6" LastKnownName="EventGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="53959dfe-9ad4-4e0f-8ee3-c773939ff2c2" name="demoLayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7cb8af1e-5363-4c00-a2c0-27337aef20cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="99248064-714e-4ebd-bc44-ad0140546932" name="EventGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="70e5b408-0447-46e7-b132-953d3b3ef90a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="75d969d6-dbc9-447e-b910-8667f55c4c3b" />
+          </association>
+          <association Id="1cb7e3be-35a1-48b9-a2c0-bd1c38478c6f" isDerived="false" sourceEndRoleName="demoLayer" targetEndRoleName="EventListenerGesture" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ccf47913-4d47-43fb-8fe7-30340f9d7577" LastKnownName="EventListenerGesture" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="187444c8-1deb-4429-9466-e64c9fb4dedf" name="demoLayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8b7bc9d4-734e-4410-a4a1-9178658840c1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4f638507-413f-4378-a6aa-153b5c0ace42" name="EventListenerGesture" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="971df845-4a04-4c62-9cf3-9f57c90bc176" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="80fc64d5-3fcc-4887-a54a-c2d9aeb0450c" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="e94f48a1-97da-4f90-9bc6-30430ef462d4" name="onHandDetected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="be644b15-ef8d-4358-bca7-9b898d4fc4b1" />
+          </operation>
+          <operation Id="a82804ba-9c23-47c2-a996-9fd4c0530168" name="onGestureFist" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="81b61cac-76f1-41ec-8e54-9cdbf9332ce1" />
+          </operation>
+          <operation Id="e0c0784a-da80-4b2b-bd91-6efb0bd2c8dd" name="onHandRoate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d70fe1ce-72f5-4771-bce7-14715915aea6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f4982955-0cac-48d1-b1f5-56b949de121b" name=")(" direction="In" isUnique="false">
+                  <elementDefinition Id="81758144-8681-4628-be3b-879299eecf20" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9385d318-c26c-44eb-b5a5-e98646efefd3" name="OnHandScale" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f3219a88-a4ce-4192-83a7-b1df98f920f4" />
+          </operation>
+          <operation Id="811a4cc2-7278-4de9-a69e-07d184d47734" name="init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3b88e5c4-125f-4b23-935f-046b926dc4db" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="067f8eeb-b4a9-4979-b9e6-57fb715ac955" name="RealSense SDK" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1bfe6861-dbf9-42a0-920e-0b0f9469af7e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ab72fa26-4aca-4ff7-aa48-1c0aedd22b05" name="HandMoveRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="588aff97-a0c2-4a67-94ec-e844cc5f5ac3" />
+        <suppliersInternal>
+          <interfaceRealization Id="73250815-f74c-4a44-8a32-598349185787">
+            <interfaceMoniker Id="ad3bb934-11d7-4a9a-96de-8f69d8e432a2" LastKnownName="BaseRule" />
+            <elementDefinition Id="997b66c3-dbc2-49fe-adfa-9a50e5f6b5ca" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="ea5d3b0c-ed43-4012-b234-948164b4791a" isDerived="false" sourceEndRoleName="HandMoveRule" targetEndRoleName="HandData" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0ff451fc-44c9-41b0-a51f-87e278c106d7" LastKnownName="HandData" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="df325a2f-b39e-4927-9c1a-12387a64cf14" name="HandMoveRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c4ece09d-11d5-4b6b-83a6-61ae752e93a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="19a52b18-0e4e-484f-b832-16003b5ec261" name="HandData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="80676dcd-50a2-4d48-8f1e-e9850a3adc3c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="11ce7703-7064-465f-97c5-812f0b61e451" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="a330f6fb-cc38-44df-ad3b-eaa0b1a55199" name="process" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="92011140-9dbb-43b8-b90d-0bd6ba47be36" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="668b1777-5ca7-4b75-aca4-ba74d118f628" name="ModelingProject1">
+    <elementDefinition Id="fafbf477-858a-4508-a839-259a5ba1dafe" />
+  </package>
+</logicalClassDesignerModel>
